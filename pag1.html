@@ -6,6 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <p>lololoolo</p>
+    <!-- Formulário para adicionar produtos -->
+    <form id="formProduto">
+        <input type="text" id="nome" placeholder="Nome do Produto" required>
+        <button type="submit">Adicionar Produto</button>
+    </form>
+
+    <!-- Tabela para listar produtos -->
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody id="listaProdutos">
+            <!-- Os produtos serão inseridos aqui -->
+        </tbody>
+    </table>
+
+    <script src="JavaScript.js"></script>
 </body>
 </html>
