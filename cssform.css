@@ -1,5 +1,16 @@
-header{
-
-background-color: gray;
-box-shadow
+.fundo_image{
+    width: 100%;  /* Largura do contêiner */
+    height: 50%; /* Altura do contêiner */
+   overflow: hidden;  /*Esconde a parte da imagem que sai do contêiner */
+    position: relative; 
+    
+    
+}
+.img{
+    
+    width: 100%;  /* A imagem ocupa toda a largura do contêiner */
+    height: auto; /* A altura é ajustada proporcionalmente */
+    transform: scale(0.8); /* Reduz o tamanho da imagem para 80% do original */
+    transform-origin: center;
+    
 }

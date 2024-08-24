@@ -50,3 +50,9 @@ document.getElementById('formProduto').addEventListener('submit', function(e) {
 
     
 });
+
+const sql = requeri('mssql');
+
+const config ={
+    user
+}
