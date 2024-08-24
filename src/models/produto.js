@@ -1,6 +1,6 @@
 const sequelize = require('sequelize');
 const database = require('../db');
-const shema = "";
+const schema = "";
 
 class produto extends sequelize.Model{}
 
@@ -46,7 +46,7 @@ produto.init(
 
     },
     {
-        sequelize : database, modelName: 'cadProd', shema
+        sequelize : database, modelName: 'cadProd', schema
     }
 )
 module.exports = produto;
