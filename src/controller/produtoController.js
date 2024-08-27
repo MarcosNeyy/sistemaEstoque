@@ -53,7 +53,7 @@ module.exports =
               
             }
 
-            return res.json(produtos);
+            return res.json(prod);
 
 
         } catch (error) {
@@ -61,27 +61,31 @@ module.exports =
 
         }
     },
-    async GetOne(req,res)
-    {
+    async GetOne(req, res) {
         try {
-
+            // Busca o produto pelo código fornecido
             const prod = await ModelProduto.findByPk(req.body.Codigo);
-           
-            return res.json(produtos);
-
-
+    
+            // Verifica se o produto foi encontrado
+            if (prod) {
+                return res.json(prod); // Retorna o produto encontrado
+            } else {
+                return res.status(404).json({ message: "Produto não encontrado" }); // Retorna 404 se o produto não existir
+            }
         } catch (error) {
-            return console.error("Erro na update : ",error);
-
+            // Registra o erro e retorna um status 500 em caso de erro no servidor
+            console.error("Erro na GetOne: ", error);
+            return res.status(500).json({ message: "Erro no servidor" });
         }
     },
+    
     async Delete(req,res)
     {
         try {
 
             const prod = await ModelProduto.findByPk(req.body.Codigo);
            await prod.destroy();
-            return res.json(produtos);
+            return res.json(prod);
 
 
         } catch (error) {
