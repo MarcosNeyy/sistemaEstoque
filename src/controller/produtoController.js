@@ -7,10 +7,12 @@ module.exports =
     {
         try {
             const produtos = await ModelProduto.findAll()
+            
             return res.json(produtos);
 
 
         } catch (error) {
+            
             return console.error("Erro na List : ",error);
 
         }
@@ -42,13 +44,13 @@ module.exports =
     {
         try {
 
-            const prod = await ModelProduto.findByPk(req.body.Codigo);
+            const prod = await ModelProduto.findByPk(req.body.codigo);
             if (prod){
                 prod.Produto     = req.body.Produto;
                 prod.medida      = req.body.medida;
                 prod.comprar     = req.body.comprar;
-                prod.Custo       = req.body.preco_Custo;
-                prod.venda       = req.body.preco_venda;
+                prod.preco_Custo = req.body.preco_Custo;
+                prod.preco_venda = req.body.preco_venda;
                 await prod.save();
               
             }
@@ -64,7 +66,7 @@ module.exports =
     async GetOne(req, res) {
         try {
             // Busca o produto pelo código fornecido
-            const prod = await ModelProduto.findByPk(req.body.Codigo);
+            const prod = await ModelProduto.findByPk(req.body.codigo);
     
             // Verifica se o produto foi encontrado
             if (prod) {
@@ -83,8 +85,8 @@ module.exports =
     {
         try {
 
-            const prod = await ModelProduto.findByPk(req.body.Codigo);
-           await prod.destroy();
+            const prod = await ModelProduto.findByPk(req.body.codigo);
+            await prod.destroy();
             return res.json(prod);
 
 

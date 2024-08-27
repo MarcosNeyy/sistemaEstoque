@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> title %></title>
 </head>
 <body>
-    <!-- Formulário para adicionar produtos -->
-    <form id="formProduto">
-        <input type="text" id="nome" placeholder="Nome do Produto" required>
-        <button type="submit">Adicionar Produto</button>
+    
+
+    <h2>Criar Produto</h2>
+    <form action="/produto/Create" method="POST">
+        <input type="text" name="Codigo" placeholder="Código" required>
+        <input type="text" name="Produto" placeholder="Nome do Produto" required>
+        <input type="text" name="medida" placeholder="Medida" required>
+        <input type="text" name="comprar" placeholder="Comprar" required>
+        <input type="number" name="preco_Custo" placeholder="Preço de Custo" required>
+        <input type="number" name="preco_venda" placeholder="Preço de Venda" required>
+        <button type="submit">Criar Produto</button>
     </form>
-
-    <!-- Tabela para listar produtos -->
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-            </tr>
-        </thead>
-        <tbody id="listaProdutos">
-            <!-- Os produtos serão inseridos aqui -->
-        </tbody>
-    </table>
-
-    <script src="JavaScript.js"></script>
 </body>
 </html>
